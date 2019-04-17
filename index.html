@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="index.js"></script>
+    <script>
+        var control = false;
+        window.onresize = function() {
+            var docs = document.getElementsByClassName('pagetext');
+        
+            for (var i = 0; i < docs.length; i++) {
+                docs[i].style.height = window.innerHeight - 40 + "px";
+                docs[i].style.width = (window.innerWidth * .9999) - 10 + "px";
+            }
+        }
+        window.onkeydown = function(e) {
+            var k = e.keyCode;
+            if (k == 13) {
+                if (document.getElementById("fileask").style.display == "block") {
+                    clickFolder();
+                }
+            }
+
+            if (k == 17) {
+                control = true;
+            }
+
+            if (k == 82) {                    
+                if (control) {
+                    location.reload();
+                }
+            }
+
+            if (k == 83) {
+                if (control) {
+                    saveFile();
+                }
+            }
+
+            if (k == 84) {
+                if (control) {
+                    clickFile();
+                }
+            }
+
+            if (k == 87) {
+                if (control) {
+                    closeFile();
+                }
+            }
+        }
+
+        window.onkeyup = function(e) {
+            var k = e.keyCode;
+            if (k == 17) {
+                control = false;
+            }
+            if (active != null && !closing) {
+                if (document.getElementById("text" + active.num.toString()).value != active.contents) {
+                    document.getElementById("top" + active.num.toString()).style.borderLeftColor = "red";
+                } else {
+                    document.getElementById("top" + active.num.toString()).style.borderLeftColor = "white";
+                }
+            }
+        }
+    </script>
+    <link type="text/css" rel="stylesheet" href="index.css" />
+    <title>Easy Editor</title>
+</head>
+<body>
+    <input type="file" id="folder" style="display:none;" onchange="selectFolder(event)" webkitdirectory directory />
+    <input type="file" accept="" id="file" style="display:none;" onchange="changeFile(event)" />
+    <div id="fullpage"></div>
+    <div class="fileask" id="fileask" style="display: none" >
+        <input type="text" id="filename" class="filename" placeholder="Enter Name Here" />
+    </div>
+    <script>require('./renderer.js');</script>
+</body>
+</html>

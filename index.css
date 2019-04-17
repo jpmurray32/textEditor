@@ -1,0 +1,75 @@
+body {
+    background: rgb(80, 80, 80);
+}
+
+.page {
+    position: absolute;
+    top: 0px;
+}
+
+.page .pagetop {
+    position: absolute;
+    top: 0px;
+    width: 150px;
+    background: rgb(40,40,40);
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    padding: 11px 0;
+    border-left: 1px solid white;
+}
+
+.page .pagetop:hover {
+    cursor: pointer;
+}
+
+.pagetext {
+    position: absolute;
+    border: none;
+    overflow: auto;
+    outline: none;
+    resize: none;
+    top: 40px;
+    left: 0px;
+    background: rgb(40,40,40);
+    font-size: 15px;
+    font-family: monospace;
+    color: white;
+    margin: 0;
+    padding: 0 5px;
+    white-space: nowrap;
+}
+
+.pagetext::-webkit-scrollbar {
+    width: 15px;
+}
+
+.pagetext::-webkit-scrollbar-track {
+    background: rgb(30,30,30);
+}
+
+.pagetext::-webkit-scrollbar-thumb {
+    background: rgb(80, 80, 80);
+}
+
+.fileask {
+    position: absolute;
+    top: 45%;
+    left: 40%;
+    height: 50px;
+    width: 20%;
+    border: 2px solid white;
+    border-radius: 5px;
+    background: rgb(50,50,160);
+}
+
+.filename {
+    position: absolute;
+    top: 5px;
+    left: 3%;
+    height: 25px;
+    width: 90%;
+    font-size: 20px;
+    padding: 5px 1%;
+    border-radius: 3px;
+}

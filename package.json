@@ -1,0 +1,15 @@
+{
+  "name": "js-gui",
+  "version": "1.0.0",
+  "description": "A simple electron-based Javascript GUI.",
+  "main": "main.js",
+  "dependencies": {
+    "electron": "^2.0.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Jack Murray",
+  "license": "ISC"
+}
